@@ -18,5 +18,20 @@ pipelineJob('ride-managment-job') {
                 }
             }
         }
+        pipelineJob('park-management-docker-job') {
+            definition {
+                cpsScm {
+                    scm {
+                        git {
+                            remote {
+                                url 'https://github.com/LabsDevOpsR/devopslab1.git'
+                            }
+                            branch 'master'
+                            scriptPath('Jenkinsfile-docker')
+                        }
+                    }
+                }
+            }
+        }
     }
 }
